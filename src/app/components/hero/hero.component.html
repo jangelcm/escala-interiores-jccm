@@ -1,7 +1,13 @@
 <section
-    class="h-screen bg-cover bg-center relative flex items-center justify-center text-white transition-all duration-1000"
-    [ngStyle]="{ 'background-image': 'url(' + images[currentIndex] + ')' }">
-    <div class="absolute inset-0 bg-gradient-to-b from-black to-70%"></div>
+    class="h-screen bg-cover bg-center relative flex items-center justify-center text-white transition-all duration-1000 cursor-pointer"
+    [ngStyle]="imageLoaded ? { 'background-image': 'url(' + images[currentIndex] + ')' } : { 'background': '#000' }"
+    [class.fade-in-bg]="imageLoaded" (touchstart)="onPointerDown($event)" (touchmove)="onPointerMove($event)"
+    (touchend)="onPointerUp($event)" (mousedown)="onPointerDown($event)" (mousemove)="onPointerMove($event)"
+    (mouseup)="onPointerUp($event)">
+    @if (imageLoaded) {
+    <div class="absolute inset-0 bg-gradient-to-b from-black to-70% fade-in-gradient"></div>
+    }
+    <img [src]="images[currentIndex]" (load)="onImageLoad()" style="display:none" alt="preload" />
 
     <div class="relative text-center px-4 max-w-2xl z-10">
         <h2 class="text-lg uppercase">Diseño de interiores</h2>
