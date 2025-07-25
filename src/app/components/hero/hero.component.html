@@ -1,0 +1,26 @@
+<section
+    class="h-screen bg-cover bg-center relative flex items-center justify-center text-white transition-all duration-1000"
+    [ngStyle]="{ 'background-image': 'url(' + images[currentIndex] + ')' }">
+    <div class="absolute inset-0 bg-gradient-to-b from-black to-70%"></div>
+
+    <div class="relative text-center px-4 max-w-2xl z-10">
+        <h2 class="text-lg uppercase">Diseño de interiores</h2>
+        <h1 class="text-3xl md:text-5xl font-bold mt-2">
+            “Improvisar te sale caro. Diseñar no”
+        </h1>
+        <a href="https://wa.me/51957195539?text=Hola%2C%20quiero%20empezar%20mi%20proyecto%20de%20interiores"
+            class="mt-6 inline-block bg-black hover:bg-white hover:text-black transition text-white px-6 py-3 rounded-full font-semibold text-sm"
+            target="_blank">
+            Empezar mi proyecto
+        </a>
+    </div>
+
+    <!-- Indicadores -->
+    <div class="absolute bottom-8 flex gap-3 z-20">
+        <button *ngFor="let img of images; let i = index" (click)="goToSlide(i)"
+            class="w-6 h-2 rounded-full transition-all" [ngClass]="{
+        'bg-white': i === currentIndex,
+        'bg-white/30 hover:bg-white/70': i !== currentIndex
+      }"></button>
+    </div>
+</section>

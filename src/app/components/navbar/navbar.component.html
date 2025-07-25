@@ -1,0 +1,21 @@
+<!-- Cambiar 'absolute' por 'fixed' si se quiere tener el menu dinamico y que baje con el scroll -->
+<nav class="absolute top-0 left-0 w-full z-50 bg-transparent text-white p-4 ">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="tracking-widest text-4xl mt-3 text-center leading-tight">
+            <div>
+                <span class="inline-block transform -skew-x-12">ESC</span>
+                <span class="inline-block transform skew-x-12">ALA</span>
+            </div>
+            <div>
+                <span class="block font-light text-xs">INTERIOR</span>
+            </div>
+        </div>
+
+        <ul class="hidden md:flex space-x-8 uppercase text-sm font-medium mt-5">
+            <li><a routerLink="/" class="hover:text-blue-800 text-2xl">Inicio</a></li>
+            <li><a href="#servicios" class="hover:text-blue-800 text-2xl">Servicios</a></li>
+            <li><a href="#nosotros" class="hover:text-blue-800 text-2xl">Nosotros</a></li>
+            <li><a href="#contacto" class="hover:text-blue-800 text-2xl">Contacto</a></li>
+        </ul>
+    </div>
+</nav>
